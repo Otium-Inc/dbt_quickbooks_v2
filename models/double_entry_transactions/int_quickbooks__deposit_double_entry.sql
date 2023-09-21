@@ -18,7 +18,7 @@ deposit_lines as (
     from {{ ref('stg_quickbooks__deposit_line') }}
 ),
 
-accounts as (
+{# accounts as (
 
     select *
     from {{ ref('stg_quickbooks__account') }}
@@ -34,7 +34,7 @@ uf_accounts as (
     where account_sub_type = '{{ var('quickbooks__undeposited_funds_reference', 'UndepositedFunds') }}'
         and is_active
         and not is_sub_account
-),
+), #}
 
 deposit_join as (
 
