@@ -45,7 +45,7 @@ deposit_join as (
         deposits.transaction_date,
         deposit_lines.amount,
         deposits.account_id as deposit_to_acct_id,
-        coalesce(deposit_lines.deposit_account_id, uf_accounts.account_id) as deposit_from_acct_id,
+        {# coalesce(deposit_lines.deposit_account_id, uf_accounts.account_id) as deposit_from_acct_id, #}
         deposit_customer_id as customer_id,
         deposit_lines.deposit_class_id as class_id,
         deposits.department_id
